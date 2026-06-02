@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react'
 import { useLanguage } from '@/app/contexts/LanguageContext';
 import type { Lang } from '@/app/contexts/LanguageContext';
 import { LayoutDashboard, Users, BookOpen, Calendar, ChevronLeft, ChevronRight, Globe } from 'lucide-react'
@@ -10,9 +11,10 @@ import clsx from 'clsx';
 export default function NavLinks() {
   const { t, lang, setLang } = useLanguage();
   const pathname = usePathname();
+  const [collapsed, setCollapsed] = useState(false)
 
   const navItems = [
-    { to: '/', label: t.nav_dashboard, icon: LayoutDashboard },
+    { to: '/dashboard', label: t.nav_dashboard, icon: LayoutDashboard },
     { to: '/students', label: t.nav_students, icon: Users },
     { to: '/training', label: t.nav_training, icon: BookOpen },
     { to: '/calendar', label: t.nav_calendar, icon: Calendar },
@@ -32,6 +34,12 @@ export default function NavLinks() {
               'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-150 group',
               isActive ? 'text-[#0a1f10]' : 'hover:bg-[#0f2d1a]'
             )}
+            style={{
+              background: isActive ? '#c8ff00' : undefined,
+              color: isActive ? '#0a1f10' : '#86b59a',
+            }}
+            title={collapsed ? item.label : undefined}
+
           >
             <>
               <Icon
