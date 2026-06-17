@@ -60,14 +60,7 @@ export async function POST(request: Request) {
         joinDate: new Date(),
 
         skills: {
-          create: {
-            forehand: 50,
-            backhand: 50,
-            serve: 50,
-            footwork: 50,
-            fitness: 50,
-            mental: 50,
-          },
+          create: body.skills,
         },
       },
     });

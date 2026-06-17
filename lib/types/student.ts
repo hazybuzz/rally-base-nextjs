@@ -53,4 +53,12 @@ export interface CreateStudentDto {
   hand: "left" | "right";
   trainingFreq: number;
   color: string;
+  skills: {
+    forehand: number;
+    backhand: number;
+    serve: number;
+    footwork: number;
+    fitness: number;
+    mental: number;
+  };
 }
