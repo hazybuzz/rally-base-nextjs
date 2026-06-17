@@ -16,6 +16,7 @@ export interface Translations {
   edit: string
   delete: string
   add: string
+  adding: string
   close: string
   view_all: string
   back: string
@@ -68,6 +69,8 @@ export interface Translations {
   stu_select_animal: string
   stu_upgrade: string
   stu_name: string
+  loading_students: string
+  no_students_found: string
   // Student Detail
   sd_skills: string
   sd_forehand: string
@@ -140,6 +143,7 @@ const en: Translations = {
   edit: 'Edit',
   delete: 'Delete',
   add: 'Add',
+  adding: 'Adding...',
   close: 'Close',
   view_all: 'View All',
   back: 'Back',
@@ -189,6 +193,8 @@ const en: Translations = {
   stu_select_animal: 'Select Animal',
   stu_upgrade: 'Level Up!',
   stu_name: 'Student Name',
+  loading_students: 'Loading students...',
+  no_students_found: 'No students found',
   sd_skills: 'Technical Skills',
   sd_forehand: 'Forehand',
   sd_backhand: 'Backhand',
@@ -255,6 +261,7 @@ const zh: Translations = {
   edit: '编辑',
   delete: '删除',
   add: '添加',
+  adding: '添加中...',
   close: '关闭',
   view_all: '查看全部',
   back: '返回',
@@ -304,6 +311,8 @@ const zh: Translations = {
   stu_select_animal: '选择动物',
   stu_upgrade: '升级！',
   stu_name: '学员姓名',
+  loading_students: '加载学员中...',
+  no_students_found: '未找到学员',
   sd_skills: '技术能力分析',
   sd_forehand: '正手',
   sd_backhand: '反手',

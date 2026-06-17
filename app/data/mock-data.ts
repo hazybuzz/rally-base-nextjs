@@ -17,7 +17,7 @@ export const ANIMALS: Animal[] = [
   { id: 'dog', emoji: '🐕', nameKey: 'animal_dog' },
 ]
 
-export function getAnimalById(id: AnimalId): Animal {
+export function getAnimalById(id: string): Animal {
   return ANIMALS.find(a => a.id === id) || ANIMALS[0]
 }
 

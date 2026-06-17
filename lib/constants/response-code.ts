@@ -1,0 +1,10 @@
+export const ResponseCode = {
+  SUCCESS: 0,
+
+  INVALID_PARAMS: 40000,
+
+  STUDENT_NOT_FOUND: 10001,
+  STUDENT_EXISTS: 10002,
+
+  SERVER_ERROR: 50000,
+} as const;

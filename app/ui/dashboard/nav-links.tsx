@@ -15,9 +15,9 @@ export default function NavLinks() {
 
   const navItems = [
     { to: '/dashboard', label: t.nav_dashboard, icon: LayoutDashboard },
-    { to: '/students', label: t.nav_students, icon: Users },
-    { to: '/training', label: t.nav_training, icon: BookOpen },
-    { to: '/calendar', label: t.nav_calendar, icon: Calendar },
+    { to: '/dashboard/students', label: t.nav_students, icon: Users },
+    { to: '/dashboard/training', label: t.nav_training, icon: BookOpen },
+    { to: '/dashboard/calendar', label: t.nav_calendar, icon: Calendar },
   ];
 
   return (

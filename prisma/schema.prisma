@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../lib/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Hand {
+  left
+  right
+}
+
+model Student {
+  id              String   @id @default(cuid())
+
+  name            String
+  age             Int
+
+  level           Int
+
+  animalId        String
+
+  hand            Hand
+
+  trainingFreq    Int
+
+  winRate         Float @default(0)
+
+  color           String
+
+  joinDate        DateTime
+
+  nextMatchDate   DateTime?
+
+  nextOpponent    String?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  skills          StudentSkill?
+
+  trends          PerformanceTrend[]
+}
+
+model StudentSkill {
+  id         String @id @default(cuid())
+
+  forehand   Int
+  backhand   Int
+  serve      Int
+  footwork   Int
+  fitness    Int
+  mental     Int
+
+  studentId  String @unique
+
+  student    Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+}
+
+model PerformanceTrend {
+  id         String @id @default(cuid())
+
+  month      String
+  rating     Float
+  sessions   Int
+
+  studentId  String
+
+  student    Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+}
